@@ -22,9 +22,10 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
-DEBUG = env.bool("DEBUG")
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+SECRET_KEY='sdggheedsubf$l3ddt_n!-_j00+ye_a(gha*_jmcujm5i_-o)#cs'
+DEBUG=False
+ALLOWED_HOSTS='Studi-Mercadona.heroku.com'
+
 
 
 
@@ -140,3 +141,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 AUTH_USER_MODEL = "accounts.User_Admin"
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SAMESITE = 'None'
