@@ -22,9 +22,10 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='sdggheedsubf$l3ddt_n!-_j00+ye_a(gha*_jmcujm5i_-o)#cs'
-DEBUG=False
-ALLOWED_HOSTS=[]
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG")
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
 
 
 
