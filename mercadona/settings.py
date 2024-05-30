@@ -25,7 +25,7 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 SECRET_KEY = env('SECRET_KEY', default="asdfasdfasdfasdf")
 
 DEBUG = env('DEBUG', default=False)
-ALLOWED_HOSTS = ["studi-mercadona-1.onrender.com"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "studi-mercadona-1.onrender.com"]
 
 
 
