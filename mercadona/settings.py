@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'mercadona',
         'USER': 'postgre',
         'PASSWORD': 'Mercadona',
-        'HOST': '127.0.0.1: 8000',
+        'HOST': '127.0.0.1:8000',
         'PORT': '5432',
     }
 }
