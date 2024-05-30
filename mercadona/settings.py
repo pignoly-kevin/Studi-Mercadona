@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import environ
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,9 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
-ALLOWED_HOSTS = ["studi-mercadona-46340ff00105.herokuapp.com"]
+
+
+
 
 
 
@@ -78,6 +81,7 @@ WSGI_APPLICATION = 'mercadona.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -89,7 +93,17 @@ DATABASES = {
     }
 }
 
+# Replace the SQLite DATABASES configuration with PostgreSQL:
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://postgres:postgres@localhost:5432/mercadona',
+        conn_max_age=600
+    )
+}
 
+    'default': env.db() 
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
