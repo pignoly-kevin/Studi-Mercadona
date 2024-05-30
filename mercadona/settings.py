@@ -24,7 +24,7 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
-ALLOWED_HOSTS = ['studi-mercadona.render.com']
+ALLOWED_HOSTS = ['mercadona.render.com']
 
 
 
