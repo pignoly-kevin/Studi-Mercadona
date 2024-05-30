@@ -22,8 +22,9 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secretkey'
-DEBUG = False
+SECRET_KEY = env('SECRET_KEY', default="asdfasdfasdfasdf")
+
+DEBUG = env('DEBUG', default=False)
 ALLOWED_HOSTS = ['*']
 
 
@@ -80,12 +81,12 @@ WSGI_APPLICATION = 'mercadona.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mercadona',
-        'USER': 'mercadona',
-        'PASSWORD': 'Mercadona',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
