@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store',
     'accounts',
-    'psycopg2'
+    'psycopg2',
     'pytest_django',
 ]
 
