@@ -25,7 +25,7 @@ environ.Env.read_env(env_file=str(BASE_DIR / "mercadona" / ".env"))
 SECRET_KEY = env('SECRET_KEY', default="asdfasdfasdfasdf")
 
 DEBUG = env('DEBUG', default=False)
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'mercadona',
         'USER': 'postgre',
         'PASSWORD': 'Mercadona',
-        'HOST': '127.0.0.1:8000',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
